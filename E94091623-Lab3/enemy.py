@@ -13,7 +13,6 @@ GREEN =(0, 255, 0)
 
 class Enemy:
     def __init__(self,wave):                    #to control the wave
-
         self.width = 40
         self.height = 50
         self.image = pygame.transform.scale(ENEMY_IMAGE, (self.width, self.height))
@@ -78,7 +77,6 @@ class EnemyGroup:
         self.campaign_max_count = 120   # (unit: frame)
         self.reserved_members = []      # the list to save Enemy
         self.expedition = []            # don't change this line until you do the EX.3
-        self.period = 0                 # Passing unit (frame)
         self.wave_num = 0             # to calculate the wave of enemies
 
 
@@ -109,8 +107,7 @@ class EnemyGroup:
         else:
             self.wave_num = 0
             print("This way is PATH 2 .")                           # when wave_num = 0, self.path select PATH_ from the right
-        self.period = 0
-        self.campaign_count = 0
+
 
     def get(self):
         """
